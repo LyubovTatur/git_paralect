@@ -1,0 +1,169 @@
+.user-block {
+    position: absolute;
+    top: 112px;
+    left: 56px;
+    width: 292px;
+    height: 432px;
+    /* background: #999; */
+}
+
+.user-block .user_avatar {
+    display: block;
+    width: 280px;
+    height: 280px;
+    /* background: #456; */
+    border-radius: 50%;
+
+}
+
+.full-name {
+    display: block;
+    margin-top: 29px;
+    white-space: pre;
+    height: 34px;
+    left: 4.1%;
+    right: 83.45%;
+    top: calc(50% - 34px/2 + 53px);
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 130%;
+    color: #000000;
+
+}
+
+.login {
+    text-decoration: none;
+    margin-top: 12px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: #0064EB;
+}
+
+.people {
+    padding-top: 25px;
+    height: 24;
+    width: 292px;
+    border-radius: 0px;
+    justify-content: space-between;
+
+}
+
+.repo-item {
+    max-height: 112px;
+    min-height: 112px;
+    margin-top: 24px;
+    padding: 24px 32px;
+    max-width: 877px ;
+    background: #FFFFFF;
+}
+
+.repo-title {
+    text-decoration: none;
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29px;
+    letter-spacing: 0px;
+    text-align: left;
+
+}
+
+.repo-desc {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0px;
+    text-align: left;
+    /* padding-top: 16px; */
+
+    width: 800px;
+    height: 19px;
+    margin-top: 16px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #000000;
+
+    white-space: nowrap; /* Запрещаем перенос строк */
+    overflow:hidden; 
+    text-overflow: ellipsis; /* Добавляем многоточие */
+
+
+
+}
+
+.followers,
+.following {
+    display: inline-block;
+    height: 24px;
+    width: 130px;
+    font-size: 16px;
+    font-weight: 400;
+    min-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    vertical-align: sub;
+    line-height: 150%;
+
+
+
+}
+
+.following {
+    text-align: right;
+
+}
+
+.people div img {
+    padding-right: 8px;
+    display: inline;
+    height: 24px;
+    width: 24px;
+    vertical-align: middle;
+    border-radius: 0px;
+}
+
+.repositories-block {
+    position: absolute;
+    height: 600px;
+    width: 877px;
+    left: 433px;
+    top: 100px;
+    border-radius: nullpx;
+    /* background: pink; */
+    
+
+}
+
+.repositories-header {
+    padding: 0%;
+    margin: 0%;
+    border-radius: nullpx;
+    font-family: Inter;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 42px;
+    letter-spacing: 0px;
+    text-align: left;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 130%;
+}
+
+.page {
+    display: inline;
+    background: #E5E5E5;
+
+}
