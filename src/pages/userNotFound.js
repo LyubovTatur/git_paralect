@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './userNotFound.css'
 
-export const UserNotFound = () => {
+export const UserNotFound = (props) => {
+    useEffect(()=>{
+        // props.setLoading(false)
+    },[])
     return (<div className="content">
         <div className="user_not_found">
             <div className="icon">

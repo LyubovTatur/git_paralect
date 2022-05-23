@@ -11,6 +11,8 @@ export const MainScreen = (params) => {
     const navigate = useNavigate()
     const [repos, setRepos] = useState('')
     function getUserInfoByUsername(username) {
+        // params.setLoading(true)
+
         if (!username)
             console.log('ds')
         // navigate('/', { replace: true })
@@ -28,19 +30,23 @@ export const MainScreen = (params) => {
                             setUserInfo(json)
                             // return json
                             // initialize();
+                            params.setLoading(false)
+
                         });
                     } else {
                         console.log('Network request for https://api.github.com/users/ failed with response ' + response.status + ': ' + response.statusText);
                         console.log(response);
-
+                        params.setLoading(false)
                         navigate('/user_not_found', { replace: true })
 
                     }
                 });
         }
+
     }
 
     function getRepos(username) {
+
         console.log('ill find some repos..')
         console.log('im going to fetch', userReqStr + username + `/repos?per_page=${per_page}&page=${Number(page) + 1}`)
         const result = fetch(userReqStr + username + `/repos?per_page=${per_page}&page=${Number(page) + 1}`)
@@ -62,14 +68,16 @@ export const MainScreen = (params) => {
 
                 }
             })
+        // params.setLoading(false)
+
 
         // result.then(() => { return final })
 
     }
-    const [isloading, setLoading] = useState(true)
     const [userInfo, setUserInfo] = useState('')
     useEffect(() => {
-        setLoading(true)
+        params.setLoading(true)
+
         const p = new Promise((resolve, reject) => {
             const temp = (new URL(document.location)).searchParams
             console.log(temp.get('login'))
@@ -81,13 +89,15 @@ export const MainScreen = (params) => {
                 setPage(Number(temp.get('page')))
             } resolve()
         })
-            .then(() => setLoading(false))
+
+        .then(() => setInterval(()=>params.setLoading(false),3000))
 
 
     }, [params.username, page])
     return (
         <div className="main-screen">
-            {isloading ? <h1>Loading..!</h1> :
+            {params.isloading ? <div className="loader"></div> :
+
                 <Fragment>
                     <div className="user-block">
                         <img src={userInfo.avatar_url} className='user_avatar' alt="user_avatar" />
@@ -113,7 +123,7 @@ export const MainScreen = (params) => {
                                 <ReposNavPanel login={userInfo.login} pageNum={page} reposCount={userInfo.public_repos} setPage={setPage} />
                             </div>
                             :
-                            <h1 className="repositories-header">No repos..</h1>
+                            <img src="././emptyRepoList.png" className="no-repositories"></img>
                         }
                     </div>
                 </Fragment>

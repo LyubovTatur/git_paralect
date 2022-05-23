@@ -18,7 +18,7 @@ export const ReposNavPanel = (props) => {
         console.log(`Loading items from ${Number(props.pageNum)*itemsPerPage} to ${endOffset}`);
         setCurrentItems(items.slice((Number(props.pageNum))*itemsPerPage, endOffset));
         setPageCount(Math.ceil(items.length / itemsPerPage));
-    }, [props.pageNum, itemsPerPage]);
+    }, [props.pageNum,props.login, itemsPerPage]);
 
     // Invoke when user click to request another page.
     const handlePageClick = (event) => {

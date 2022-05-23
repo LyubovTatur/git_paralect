@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './initialState.css'
 
-export const InitialState = () => {
+export const InitialState = (props) => {
+    useEffect(()=>{
+        // props.setLoading(false)
+    },[])
     return (
         <div className="content">
             <div className="write-smth-group">

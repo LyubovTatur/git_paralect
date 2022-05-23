@@ -8,7 +8,7 @@ export const Header = (params) => {
             <div className="frame">
                 <img className="header-logo" src="././Vector.png" alt="git pussy" />
             </div>
-            <SearchForm username={params.username} setUsername={params.setUsername}/>
+            <SearchForm setLoading={params.setLoading} username={params.username} setUsername={params.setUsername}/>
         </header>
     )
 }

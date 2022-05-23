@@ -72,7 +72,9 @@
     text-align: left;
 
 }
-
+.repo-list{
+    max-width: 877px ;
+}
 .repo-desc {
     font-family: Inter;
     font-size: 16px;
@@ -167,3 +169,9 @@
     background: #E5E5E5;
 
 }
+.no-repositories{
+    position: absolute;
+    top: 200px;
+    left: 300px;
+}
+
