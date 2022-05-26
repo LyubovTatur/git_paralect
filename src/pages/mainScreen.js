@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { RepositoriesList } from "../components/repositories/RepositoriesList";
 import { ReposNavPanel } from "../components/repositories/ReposNavPanel";
-import './mainScreen.css'
+// import './mainScreen.css'
 
 export const MainScreen = (params) => {
     const per_page = 4
@@ -97,31 +97,30 @@ export const MainScreen = (params) => {
     return (
         <div className="main-screen">
             {params.isloading ? <div className="loader"></div> :
-
                 <Fragment>
                     <div className="user-block">
-                        <img src={userInfo.avatar_url} className='user_avatar' alt="user_avatar" />
+                        <img src={userInfo.avatar_url} className='user-avatar' alt="user-avatar" />
                         <div className="full-name">{userInfo.name}</div>
                         <a href={userInfo.html_url} target="_blank" className="login">{userInfo.login}</a>
                         <div className="people">
-                            <div className="followers">
+                            <div className="follow">
                                 <img src='././shared.png' alt="shared.png" />
-                                {userInfo.followers} followers
+                                <div className="text">{userInfo.followers<1000?userInfo.followers:(Number(userInfo.followers)/1000).toFixed(1)+'k'} followers</div>
                             </div>
-                            <div className="following">
+                            <div className="follow">
                                 <img src='././provate.png' alt="provate.png" />
-                                {userInfo.following} following
+                                <div className="text">{userInfo.following} following</div>
                             </div>
                         </div>
                     </div>
                     <div className="repositories-block">
                         {userInfo.public_repos
                             ?
-                            <div className="">
+                            <>
                                 <h1 className="repositories-header">Repositories ({userInfo.public_repos}) </h1>
                                 <RepositoriesList repos={repos} />
                                 <ReposNavPanel login={userInfo.login} pageNum={page} reposCount={userInfo.public_repos} setPage={setPage} />
-                            </div>
+                            </>
                             :
                             <img src="././emptyRepoList.png" className="no-repositories"></img>
                         }

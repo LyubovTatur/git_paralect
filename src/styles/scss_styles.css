@@ -1,0 +1,293 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css";
+.App {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+.App header {
+  background: #0064EB;
+  height: 72px;
+  display: flex;
+}
+.App header img {
+  margin-block: auto;
+  margin-left: 41px;
+  height: 40px;
+  width: 41px;
+}
+@media (max-width: 400px) {
+  .App header img {
+    margin-left: 5%;
+  }
+}
+.App header .search-form {
+  background: white;
+  width: 500px;
+  height: 40px;
+  max-height: 40px;
+  margin-block: auto;
+  margin-inline: 22px;
+  border-radius: 6px;
+}
+.App header .search-form img {
+  display: inline;
+  height: 14px;
+  width: 14px;
+  margin-left: 19px;
+}
+.App header .search-form input {
+  margin-top: 8px;
+  display: inline;
+  height: 24px;
+  width: 256px;
+  margin-inline: 11px;
+  border: 0px;
+  outline: 0px;
+  font-size: 14px;
+  letter-spacing: 0.01em;
+}
+@media (max-width: 460px) {
+  .App header .search-form input {
+    width: 65%;
+  }
+}
+.App .main-screen {
+  padding: 39px 57px;
+  display: grid;
+  grid-template-columns: 280px auto;
+}
+@media (max-width: 800px) {
+  .App .main-screen {
+    display: block;
+    padding: 10px 0px;
+  }
+}
+.App .main-screen .user-block {
+  display: inline-block;
+  width: 280px;
+}
+@media (max-width: 800px) {
+  .App .main-screen .user-block {
+    display: block;
+    width: 90%;
+    margin: auto;
+  }
+}
+.App .main-screen .user-block img.user-avatar {
+  width: 100%;
+  border-radius: 50%;
+}
+.App .main-screen .user-block .full-name {
+  margin-top: 29px;
+  margin-bottom: 12px;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 34px;
+  letter-spacing: 0px;
+}
+@media (max-width: 800px) {
+  .App .main-screen .user-block .full-name {
+    font-size: 200%;
+  }
+}
+.App .main-screen .user-block .login {
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+@media (max-width: 800px) {
+  .App .main-screen .user-block .login {
+    font-size: 150%;
+  }
+}
+.App .main-screen .user-block .people {
+  margin-block: 25px;
+  width: 100%;
+  max-height: 26px;
+  font-size: 16px;
+  display: grid;
+  grid-template-columns: 6fr 6fr;
+}
+.App .main-screen .user-block .people .follow {
+  display: grid;
+  grid-template-columns: 23px auto;
+}
+.App .main-screen .user-block .people .follow .text {
+  display: inline;
+  min-height: 23px;
+}
+@media (max-width: 800px) {
+  .App .main-screen .user-block .people .follow .text {
+    margin-block: auto;
+    margin-left: 20px;
+  }
+}
+.App .main-screen .user-block .people .follow img {
+  width: 23px;
+  height: 23px;
+}
+@media (max-width: 800px) {
+  .App .main-screen .user-block .people .follow img {
+    width: 30px;
+    height: 30px;
+  }
+}
+.App .main-screen .repositories-block {
+  margin-left: 96px;
+  max-width: 900px;
+  min-width: 100px;
+}
+@media (max-width: 800px) {
+  .App .main-screen .repositories-block {
+    padding-top: 20px;
+    display: block;
+    margin-inline: auto;
+    width: 90%;
+  }
+}
+.App .main-screen .repositories-block .repos-nav-panel {
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: flex-end;
+}
+@media (max-width: 800px) {
+  .App .main-screen .repositories-block .repos-nav-panel {
+    display: block;
+    justify-content: center;
+  }
+}
+.App .main-screen .repositories-block .repos-nav-panel .pagesInfo {
+  min-width: 130px;
+  height: 25px;
+  background: #F9F9F9;
+  font-size: 14px;
+  line-height: 21px;
+  color: #808080;
+}
+@media (max-width: 800px) {
+  .App .main-screen .repositories-block .repos-nav-panel .pagesInfo {
+    text-align: center;
+  }
+}
+@media (max-width: 800px) {
+  .App .main-screen .repositories-block .repos-nav-panel {
+    display: grid;
+    grid-template-columns: auto;
+  }
+}
+.App .main-screen .repositories-block .repos-nav-panel .react-pag .pagination {
+  color: #808080;
+  background: #F9F9F9;
+  height: 25px;
+}
+.App .main-screen .repositories-block .repos-nav-panel .react-pag .pagination .page-link {
+  height: 25px;
+  align-items: center;
+  padding: 2px 6px;
+  margin-inline: 7px;
+  border-width: 0ch;
+  border-radius: 3px;
+  color: #808080;
+  background: #F9F9F9;
+}
+@media (max-width: 800px) {
+  .App .main-screen .repositories-block .repos-nav-panel .react-pag .pagination .page-link {
+    margin-inline: auto;
+  }
+}
+.App .main-screen .repositories-block .repos-nav-panel .react-pag .pagination .page-item {
+  border-radius: 3px;
+}
+.App .main-screen .repositories-block .repos-nav-panel .react-pag .pagination .active a {
+  color: white;
+  background: #0064EB;
+}
+.App .main-screen .repositories-block .no-repositories {
+  display: block;
+  margin-top: 220px;
+  margin-inline: auto;
+}
+@media (max-width: 800px) {
+  .App .main-screen .repositories-block .no-repositories {
+    margin-top: 30px;
+    width: 100%;
+  }
+}
+.App .main-screen .repositories-block .repositories-header {
+  border-width: 3px;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 42px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+@media (max-width: 800px) {
+  .App .main-screen .repositories-block .repositories-header {
+    font-size: 26px;
+    text-align: center;
+  }
+}
+.App .main-screen .repositories-block .repo-item {
+  padding: 24px 32px;
+  background: white;
+  max-height: 112px;
+  margin-block: 24px 32px;
+  /* Добавляем многоточие */
+}
+.App .main-screen .repositories-block .repo-item .repo-title {
+  color: #0064EB;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 29px;
+  letter-spacing: 0px;
+  text-align: left;
+  text-decoration: none;
+  max-width: 100%;
+}
+.App .main-screen .repositories-block .repo-item .repo-title .inside-a {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.App .main-screen .repositories-block .repo-item .repo-desc {
+  margin-top: 16px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.App .initial-state {
+  margin-top: 220px;
+}
+.App .initial-state .icon {
+  width: 64px;
+  height: 64px;
+}
+.App .initial-state .text {
+  display: block;
+  margin-top: 47px;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 31px;
+  letter-spacing: 0px;
+  height: 62px;
+  width: 210px;
+  line-height: 140%;
+  /* or 31px */
+  margin-inline: auto;
+  text-align: center;
+  color: #808080;
+}
+
+/*# sourceMappingURL=scss_styles.css.map */

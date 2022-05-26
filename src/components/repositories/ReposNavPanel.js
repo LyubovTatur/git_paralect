@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ReactPaginate from 'react-paginate'
-import { styles } from './reposNav.css'
+// import { styles } from './reposNav.css'
 export const ReposNavPanel = (props) => {
     const itemsPerPage = 4
     let items = [...Array(props.reposCount).keys()];
@@ -14,11 +14,11 @@ export const ReposNavPanel = (props) => {
 
     useEffect(() => {
         // Fetch items from another resources.
-        const endOffset = Number(props.pageNum)*itemsPerPage + itemsPerPage;
-        console.log(`Loading items from ${Number(props.pageNum)*itemsPerPage} to ${endOffset}`);
-        setCurrentItems(items.slice((Number(props.pageNum))*itemsPerPage, endOffset));
+        const endOffset = Number(props.pageNum) * itemsPerPage + itemsPerPage;
+        console.log(`Loading items from ${Number(props.pageNum) * itemsPerPage} to ${endOffset}`);
+        setCurrentItems(items.slice((Number(props.pageNum)) * itemsPerPage, endOffset));
         setPageCount(Math.ceil(items.length / itemsPerPage));
-    }, [props.pageNum,props.login, itemsPerPage]);
+    }, [props.pageNum, props.login, itemsPerPage]);
 
     // Invoke when user click to request another page.
     const handlePageClick = (event) => {
@@ -26,7 +26,7 @@ export const ReposNavPanel = (props) => {
         console.log(`User requested page number ${event.selected}, which is offset ${newOffset}`);
         props.setPage(Number(event.selected))
         // props.setPage(newOffset);
-        navigate('/?login='+props.login+'&page='+(Number(event.selected)))
+        navigate('/?login=' + props.login + '&page=' + (Number(event.selected)))
     };
 
 
@@ -55,7 +55,7 @@ export const ReposNavPanel = (props) => {
                             <>{currentItems[0] + 1} of {items.length} items</>
                             :
                             <>
-                                {currentItems[0] + 1}-{currentItems[currentItems.length - 1]+1 } of {items.length} items
+                                {currentItems[0] + 1}-{currentItems[currentItems.length - 1] + 1} of {items.length} items
                             </>
                         :
                         ''
@@ -63,27 +63,29 @@ export const ReposNavPanel = (props) => {
 
 
             </div>
-            <ReactPaginate
-                nextLabel=">"
-                forcePage={props.pageNum}
-                onPageChange={handlePageClick}
-                pageRangeDisplayed={2}
-                marginPagesDisplayed={2}
-                pageCount={pageCount}
-                previousLabel="<"
-                pageClassName="page-item"
-                pageLinkClassName="page-link"
-                previousClassName="page-item"
-                previousLinkClassName="page-link"
-                nextClassName="page-item"
-                nextLinkClassName="page-link"
-                breakLabel="..."
-                breakClassName="page-item"
-                breakLinkClassName="page-link"
-                containerClassName="pagination"
-                activeClassName="active"
-                renderOnZeroPageCount={null}
-            />
+            <div className="react-pag">
+                <ReactPaginate
+                    nextLabel=">"
+                    forcePage={props.pageNum}
+                    onPageChange={handlePageClick}
+                    pageRangeDisplayed={2}
+                    marginPagesDisplayed={2}
+                    pageCount={pageCount}
+                    previousLabel="<"
+                    pageClassName="page-item"
+                    pageLinkClassName="page-link"
+                    previousClassName="page-item"
+                    previousLinkClassName="page-link"
+                    nextClassName="page-item"
+                    nextLinkClassName="page-link"
+                    breakLabel="..."
+                    breakClassName="page-item"
+                    breakLinkClassName="page-link"
+                    containerClassName="pagination"
+                    activeClassName="active"
+                    renderOnZeroPageCount={null}
+                />
+            </div>
         </div>
     )
 }

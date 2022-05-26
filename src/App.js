@@ -1,4 +1,5 @@
-import './App.css';
+// import './App.css';
+import './styles/scss_styles.css';
 import { Header } from './components/Header';
 import { InitialState } from './pages/initialState';
 import { MainScreen } from './pages/mainScreen';
@@ -25,9 +26,6 @@ function App() {
   return (
     <div className="App">
       <Header username={username} setLoading={setLoading} setUsername={setUsername} />
-      <br />
-      <br />
-      <br />
           <Routes>
             <Route path="/" element={<MainScreen isloading={isloading} setLoading={setLoading} username={username} setUsername={setUsername} />} />
             <Route path="/user_not_found" element={<UserNotFound setLoading={setLoading} />} />
